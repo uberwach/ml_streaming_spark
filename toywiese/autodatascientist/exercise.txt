@@ -1,0 +1,17 @@
+Autodata Scientist Game
+
+1. Producer selects random data set, trains logistic regression on it and sends it to Kafka together with the accuracy score.
+
+2. Consumer receives, tries to beat data set.
+from sklearn.datasets import make_classification
+
+while True:
+    # make_classification
+    # train logreg
+    # score it
+    # send dataset combined with score via the producer to test-topic
+    # sleep(0.5)
+
+# 1. X, y = make_classification(flip_y=0.1)
+# 2. train logistic regression on X, y
+# 3. send data set with score (= accuracy of that model on the data) via kafka
