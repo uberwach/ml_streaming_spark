@@ -59,7 +59,7 @@ _Producing messages in terminal_
 
 _note that the test topics gets created automatically_
 ```
-bin/kafka-console-producer.sh --zookeeper localhost:2181 --topic test
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
 ```
 
 _Topics_
