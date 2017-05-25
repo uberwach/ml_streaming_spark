@@ -4,7 +4,7 @@
 
 It is expected that you have,
 
-- Anaconda distribution installed, preferably with Python 2.7.
+- Anaconda distribution installed, preferably with Python 3.5.
 
 - PySpark in the `$PYTHONPATH`. To test this try `import pyspark` in a Python shell. My configuration looks as follow (in file `.bashrc` in the HOME folder)
 
@@ -15,8 +15,8 @@ export PATH=$PATH:$SPARK_HOME/bin # add spark-submit, spark-shell etc. to PATH
 export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
 export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$PYTHONPATH
 
-export PYSPARK_DRIVER_PYTHON=$ANACONDA_HOME/bin/python
-export PYSPARK_PYTHON=$ANACONDA_HOME/bin/python
+export PYSPARK_DRIVER_PYTHON=$(which python)
+export PYSPARK_PYTHON=$(which ipython)
 ```
 
 - A terminal, we work with the command line. This is *de-facto* standard for Data Scientists.
