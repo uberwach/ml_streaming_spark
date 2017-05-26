@@ -81,13 +81,20 @@ _Consumer Groups_
 ```
 kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
 ```
+
+_Cleaning up_
+
+Stop the Kafka brokers, then Zookeeper. Under /tmp you can delete the kafka-logs and zookeeper, e.g.
+
+```
+rm -rf /tmp/zookeeper /tmp/kafka-logs
+```
+ ### Day 1
  
- ### Toywiese
- 
- Contains the first day's projects.
+ #### Overview
  
 ```
- └── toywiese
+ └── day1 
     ├── autodatascientist
     │   ├── consumer.py
     │   ├── exercise.txt
@@ -108,3 +115,10 @@ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
         ├── run.sh
         └── simple_sparkstream.py
 ```
+_simple\_consumer_: A simple Kafka consumer in Python, also as a microservice.
+
+_simple\_producer_: A simple Kafka producer in Python, also as a microservice.
+
+_simple\_sparkstream_: A minimal example to show-case how to use the traditional `DStream` API of Spark streaming.
+
+_autodatascientist_: Additional "game" to show-case how to send matrix data over Kafka and process it.
