@@ -1,0 +1,3 @@
+gensim
+Pubnub
+python-kafka
