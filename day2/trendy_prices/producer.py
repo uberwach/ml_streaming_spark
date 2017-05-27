@@ -21,7 +21,7 @@ WEIGHTS = np.random.random(N_FEATURES) - 0.5
 
 def serialize(msg):
     try:
-        encoded_msg = json.dumps(msg)
+        encoded_msg = json.dumps(msg).encode("utf-8")
     except Exception as e:
         print(repr(e))
     else:

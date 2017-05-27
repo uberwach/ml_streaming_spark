@@ -21,7 +21,7 @@ logger.handlers = []
 
 def extract_data_rows_from_json(data):
     # data is a (key, value) tuple, and because we have no key, the first entry is None.
-    msg = json.loads(data[1])
+    msg = json.loads(data[1].decode("utf-8"))
     rows = msg.get("rows", [])
     return rows
 
