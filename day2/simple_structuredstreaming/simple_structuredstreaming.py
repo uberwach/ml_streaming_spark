@@ -16,6 +16,7 @@ def decode(payload):
         return decoded_msg["msg"]
 
 # can also be replaced by MapType or StructType.
+# StructType.add("msg", StringType()).add("time", LongType())
 decode_udf = F.udf(decode, StringType())
 
 if __name__ == "__main__":
