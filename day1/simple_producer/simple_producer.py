@@ -27,5 +27,5 @@ if __name__ == "__main__":
                              client_id="Simple Producer")
 
     while True:
-        producer.send("test", create_message())
+        producer.send("test-topic", create_message())
         sleep(0.5)

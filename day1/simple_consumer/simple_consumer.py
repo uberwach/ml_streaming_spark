@@ -27,7 +27,7 @@ def deserialize(msg):
 
 if __name__ == "__main__":
     KAFKA_SERVER = os.environ.get("KAFKA_SERVER", "localhost:9092")
-    CONSUME_TOPICS = os.environ.get("CONSUME_TOPICS", "test").split(",")
+    CONSUME_TOPICS = os.environ.get("CONSUME_TOPICS", "test-topic").split(",")
 
     consumer = KafkaConsumer(bootstrap_servers="localhost:9092",
                              client_id="Simple Consumer",
