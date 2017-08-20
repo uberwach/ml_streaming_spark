@@ -76,7 +76,7 @@ cd $KAFKA_HOME
 We use the docker container image `spotify/kafka`, use `docker pull spotify/kafka` once. Then to start a container,
 
 ```
-docker run -p 2181:2181 -p 9092:9092 spotify/kafka
+docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=localhost --env ADVERTISED_PORT=9092 spotify/kafka
 ```
 
 #### Manual commands
