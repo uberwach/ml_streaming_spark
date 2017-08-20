@@ -16,7 +16,7 @@ if __name__ == "__main__":
     ssc = StreamingContext(sc, 10)
 
     directKafkaStream = KafkaUtils.createDirectStream(ssc,
-                                                      ["test"],
+                                                      ["test-topic"],
                                                       {"metadata.broker.list": "localhost:9092"})
 
     numStream = (directKafkaStream.map(lambda tup: json.loads(tup[1]).get("msg", ""))
