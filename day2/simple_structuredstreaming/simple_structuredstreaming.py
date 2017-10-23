@@ -21,6 +21,7 @@ decode_udf = F.udf(decode, StringType())
 
 if __name__ == "__main__":
     spark = SparkSession.builder.appName("Test Stream").getOrCreate()
+    spark.sparkContext.setLogLevel("WARN")
 
     ds = (spark.readStream
             .format("kafka")
