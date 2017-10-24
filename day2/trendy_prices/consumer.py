@@ -42,6 +42,7 @@ if __name__ == "__main__":
     # Create a local StreamingContext with two working thread
     # and batch interval of 1 second
     sc = SparkContext("local[2]", "Streaming Linear Regression")
+    sc.setLogLevel("WARN")
     # 2nd argument is batch duration
     ssc = StreamingContext(sc, 5)
 
@@ -67,7 +68,7 @@ if __name__ == "__main__":
         print("Predictions: %r" % predictions)
         print("Weights %r" % model._model.weights)
 
-    # predictionStream.foreachRDD(printResults)
-    predictionStream.saveAsTextFiles("predictions")
+    predictionStream.foreachRDD(printResults)
+    # predictionStream.saveAsTextFiles("predictions")
     ssc.start()
     ssc.awaitTermination()
