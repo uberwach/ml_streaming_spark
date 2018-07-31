@@ -33,7 +33,7 @@ normalize_udf = F.udf(normalize, StringType())
 
 if __name__ == "__main__":
     spark = SparkSession.builder.appName("Test Stream").getOrCreate()
-    spark.sparkContext.setLogLevel("WARN")
+    spark.sparkContext.setLogLevel("FATAL")
 
     ds = (spark.readStream
             .format("kafka")
